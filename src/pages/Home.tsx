@@ -1,4 +1,4 @@
-import { FlightList } from "../components/layout/FlightList/FlightList";
+import { FlightList } from "../components/FlightList/FlightList";
 
 export function Home() {
   return (

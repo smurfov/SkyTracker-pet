@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import type { tFlightItem } from "../../../types/Flight";
+import type { tFlightItem } from "../../types/Flight";
 import { FlightItem } from "../FlightItem/FlightItem";
 
 export function FlightList() {

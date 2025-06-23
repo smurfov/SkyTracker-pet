@@ -1,5 +1,5 @@
-import type { tFlightItem } from "../../../types/Flight";
-import iconPlane from "../../../assets/plane icon.svg";
+import type { tFlightItem } from "../../types/Flight";
+import iconPlane from "../../assets/plane icon.svg";
 
 interface FlightItemProps extends tFlightItem {
   isActive: boolean;
