@@ -1,6 +1,45 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.text-orange {
+  color: #fca316;
+}
+
+.border-orange {
+  border-color: #fca316;
+}
+
+.bg-orange {
+  background-color: #fca316;
+}
+
+.text-white {
+  color: #fefefe;
+}
+
+.border-white {
+  border-color: #fefefe;
+}
+
+.bg-white {
+  background-color: #fefefe;
 }

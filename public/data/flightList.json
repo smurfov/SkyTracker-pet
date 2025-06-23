@@ -1,0 +1,65 @@
+[
+  {
+    "from": "Atyrau",
+    "fromCode": "GUW",
+    "to": "Amsterdam",
+    "toCode": "AMS",
+    "numberRoute": 1,
+    "airline": "Air Astana",
+    "logo": "./img/Air Astana logo.png"
+  },
+  {
+    "from": "Almaty",
+    "fromCode": "ALA",
+    "to": "Antalya",
+    "toCode": "AYT",
+    "numberRoute": 2,
+    "airline": "Turkish Airlines",
+    "logo": "./img/Turkish Airlines logo.png"
+  },
+  {
+    "from": "Moscow",
+    "fromCode": "SVO",
+    "to": "Atyrau",
+    "toCode": "GUW",
+    "numberRoute": 3,
+    "airline": "Aeroflot",
+    "logo": "./img/Aeroflot logo.png"
+  },
+  {
+    "from": "Dubai",
+    "fromCode": "DXB",
+    "to": "Lissabon",
+    "toCode": "LIS",
+    "numberRoute": 4,
+    "airline": "Emirates",
+    "logo": "./img/Emirates logo.png"
+  },
+  {
+    "from": "Saint-Petersburg",
+    "fromCode": "LED",
+    "to": "Ekaterinburg",
+    "toCode": "SVX",
+    "numberRoute": 5,
+    "airline": "Aeroflot",
+    "logo": "./img/Aeroflot logo.png"
+  },
+  {
+    "from": "Moscow",
+    "fromCode": "VKO",
+    "to": "Sochi",
+    "toCode": "AER",
+    "numberRoute": 6,
+    "airline": "S7",
+    "logo": "./img/S7 logo.png"
+  },
+  {
+    "from": "Astana",
+    "fromCode": "NQZ",
+    "to": "Atyrau",
+    "toCode": "GUW",
+    "numberRoute": 7,
+    "airline": "Qazaq Air",
+    "logo": "./img/Qazaq Air logo.png"
+  }
+]

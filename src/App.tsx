@@ -1,9 +1,9 @@
 import "./App.css";
-import { Layout } from "./components/layout/layout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ROUTES } from "./routes";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
+import { Layout } from "./components/layout/Layout";
 
 function App() {
   return (
