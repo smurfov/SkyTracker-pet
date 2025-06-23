@@ -1,1 +1,1 @@
-# SkyTracker-pet
+# SkyTracker (marapthon project)
