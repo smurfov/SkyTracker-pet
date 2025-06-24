@@ -1,10 +1,10 @@
 import type { tFlightItem } from "../../types/Flight";
 import iconPlane from "../../assets/plane icon.svg";
+import { useEffect, useState } from "react";
 
 interface FlightItemProps extends tFlightItem {
   isActive: boolean;
   onClick: () => void;
-  progress: number;
 }
 
 export function FlightItem({
@@ -19,11 +19,33 @@ export function FlightItem({
   airline,
   logo,
 }: FlightItemProps) {
+  const [flightProgress, setFlightProgress] = useState<number>(0);
+
+  useEffect(() => {
+    setFlightProgress(progress);
+  }, [progress]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setFlightProgress((progress) => {
+        const newProgress = progress + 1;
+        if (newProgress >= 100) {
+          clearInterval(intervalId);
+          return 100;
+        } else {
+          return newProgress;
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div
       className={`p-[3px] rounded-xl ${
         isActive ? `bg-gradient-to-r from-orange-500 to-yellow-400` : ""
-      }`}
+      } hover:scale-95`}
     >
       <button
         className="flex flex-col gap-[20px] rounded-xl w-[500px] p-[20px] bg-[#1c1c1c] cursor-pointer"
@@ -52,24 +74,24 @@ export function FlightItem({
         {/* Bottom */}
         <div className="flex justify-between items-center">
           {/* From */}
-          <div className="flex flex-col pr-[30px]">
-            <div className="text-xs">{from}</div>
+          <div className="flex flex-col w-[100px]">
+            <div className="text-xs text-left">{from}</div>
             <div className="text-2xl uppercase text-left">{fromCode}</div>
           </div>
 
           {/* Progress Bar */}
-          <div className="w-full mt-[10px]">
+          <div className="w-[60%] mt-[10px]">
             <div className="flex h-[20px] items-center relative">
               <div
                 className="relative h-[3px] bg-gradient-to-r from-orange-500 to-yellow-400 rounded-l"
                 style={{
-                  width: `${progress}%`,
+                  width: `${flightProgress}%`,
                 }}
               ></div>
               <div
                 className="h-[3px] bg-[#2c2c2c] rounded-r"
                 style={{
-                  width: `${100 - progress}%`,
+                  width: `${100 - flightProgress}%`,
                 }}
               ></div>
 
@@ -79,15 +101,15 @@ export function FlightItem({
                 src={iconPlane}
                 alt="plane icon"
                 style={{
-                  left: `${progress}%`,
+                  left: `${flightProgress}%`,
                 }}
               />
             </div>
           </div>
 
           {/* To */}
-          <div className="flex flex-col pl-[30px]">
-            <div className="text-xs">{to}</div>
+          <div className="flex flex-col w-[100px]">
+            <div className="text-xs text-right">{to}</div>
             <div className="text-2xl uppercase text-right">{toCode}</div>
           </div>
         </div>

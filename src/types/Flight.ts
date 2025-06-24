@@ -6,4 +6,5 @@ export interface tFlightItem {
   numberRoute: number;
   airline: string;
   logo: string;
+  progress: number;
 }

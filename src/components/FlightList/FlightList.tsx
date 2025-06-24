@@ -45,7 +45,7 @@ export function FlightList() {
             logo={item.logo}
             onClick={() => setActiveFlight(item.numberRoute)}
             isActive={activeFlight === item.numberRoute}
-            progress={50}
+            progress={item.progress}
           />
         ))}
     </div>

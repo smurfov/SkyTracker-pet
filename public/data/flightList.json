@@ -6,7 +6,8 @@
     "toCode": "AMS",
     "numberRoute": 1,
     "airline": "Air Astana",
-    "logo": "./img/Air Astana logo.png"
+    "logo": "./img/Air Astana logo.png",
+    "progress": 15
   },
   {
     "from": "Almaty",
@@ -15,7 +16,8 @@
     "toCode": "AYT",
     "numberRoute": 2,
     "airline": "Turkish Airlines",
-    "logo": "./img/Turkish Airlines logo.png"
+    "logo": "./img/Turkish Airlines logo.png",
+    "progress": 30
   },
   {
     "from": "Moscow",
@@ -24,7 +26,8 @@
     "toCode": "GUW",
     "numberRoute": 3,
     "airline": "Aeroflot",
-    "logo": "./img/Aeroflot logo.png"
+    "logo": "./img/Aeroflot logo.png",
+    "progress": 20
   },
   {
     "from": "Dubai",
@@ -33,7 +36,8 @@
     "toCode": "LIS",
     "numberRoute": 4,
     "airline": "Emirates",
-    "logo": "./img/Emirates logo.png"
+    "logo": "./img/Emirates logo.png",
+    "progress": 80
   },
   {
     "from": "Saint-Petersburg",
@@ -42,7 +46,8 @@
     "toCode": "SVX",
     "numberRoute": 5,
     "airline": "Aeroflot",
-    "logo": "./img/Aeroflot logo.png"
+    "logo": "./img/Aeroflot logo.png",
+    "progress": 60
   },
   {
     "from": "Moscow",
@@ -51,7 +56,8 @@
     "toCode": "AER",
     "numberRoute": 6,
     "airline": "S7",
-    "logo": "./img/S7 logo.png"
+    "logo": "./img/S7 logo.png",
+    "progress": 40
   },
   {
     "from": "Astana",
@@ -60,6 +66,7 @@
     "toCode": "GUW",
     "numberRoute": 7,
     "airline": "Qazaq Air",
-    "logo": "./img/Qazaq Air logo.png"
+    "logo": "./img/Qazaq Air logo.png",
+    "progress": 37
   }
 ]
