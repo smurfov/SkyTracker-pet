@@ -8,11 +8,18 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  .bg-gradient-transition {
+    transition: background-position 0.4s ease, background-color 0.4s ease,
+      transform 0.3s ease;
+  }
 }
 
 body {
   max-height: 100vh;
   overflow: hidden;
+  background-image: url("./assets/MapPlaceholder.png");
+  background-position: center;
+  background-size: contain;
 }
 
 #root {

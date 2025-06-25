@@ -1,9 +1,11 @@
-import { FlightList } from "../components/FlightList/FlightList";
+import { FlightDetail } from "../components/Flight/FlightDetail";
+import { FlightList } from "../components/Flight/FlightList";
 
 export function Home() {
   return (
-    <div className="bg-[#111111] w-screen h-screen">
+    <div className="w-screen h-screen">
       <FlightList />
+      <FlightDetail />
     </div>
   );
 }
