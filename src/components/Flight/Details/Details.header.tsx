@@ -9,6 +9,7 @@ interface DetailsHeaderProps {
   color1: string | undefined;
   color2: string | undefined;
   handleClose: () => void;
+  move: boolean;
 }
 
 export function DetailsHeader({
@@ -17,6 +18,7 @@ export function DetailsHeader({
   color1,
   color2,
   handleClose,
+  move,
 }: DetailsHeaderProps) {
   return (
     <div
@@ -34,10 +36,16 @@ export function DetailsHeader({
         {/* Close button */}
         <button
           type="button"
-          className="w-[40px] h-[40px] text-center bg-neutral-700 rounded-[50%] cursor-pointer"
+          className="w-[40px] h-[40px] bg-neutral-700 rounded-[50%] cursor-pointer flex justify-center"
           onClick={handleClose}
         >
-          x
+          <img
+            width={"25px"}
+            height={"25px"}
+            src="/icons/Close.svg"
+            alt="Close ico"
+            className={`${!move && "animate-spin"}`}
+          />
         </button>
       </div>
       {/* Aircraft */}

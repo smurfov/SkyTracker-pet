@@ -21,7 +21,7 @@ export function FlightDetail() {
 
   const handleClose = () => {
     setIsVisible(false);
-    setTimeout(() => closeModal(), 500);
+    setTimeout(() => closeModal(), 1000);
   };
 
   const flight = FLIGHTS.find((f) => f.airline.code === selectedFlight);
@@ -31,7 +31,7 @@ export function FlightDetail() {
   return (
     <div
       className={cn(
-        "w-[520px] rounded-xl h-[97vh] bg-[#1c1c1c] fixed top-[20px] right-0 overflow-y-auto no-scrollbar transition-transform duration-500 ease-in flex flex-col items-center gap-[12px]",
+        "w-[520px] rounded-xl h-[97vh] bg-[#1c1c1c] fixed top-[20px] right-0 overflow-y-auto no-scrollbar transition-transform duration-1000 ease flex flex-col items-center gap-[12px]",
         selectedFlight && isVisible
           ? "translate-x-[-40px]"
           : "translate-x-[530px]"
@@ -46,6 +46,7 @@ export function FlightDetail() {
             color1={flight?.colorGradient[0]}
             color2={flight?.colorGradient[1]}
             handleClose={handleClose}
+            move={isVisible}
           />
           {/* Main */}
           {/* <DetailsMain /> */}
