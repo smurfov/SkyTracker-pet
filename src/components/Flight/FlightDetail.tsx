@@ -4,6 +4,10 @@ import { cn } from "../../utils/cn";
 import { useEffect, useState } from "react";
 import iconPlane from "../../assets/plane icon.svg";
 import { useAnimateProgress } from "../../shared/hooks/useAnimateProgress";
+import { DetailsHeader } from "./Details/Details.header";
+import { DetailsRoute } from "./Details/Details.route";
+import { DeatailsFlightInfo } from "./Details/Details.flightInfo";
+import { DetailsButtons } from "./Details/Details.buttons";
 
 export function FlightDetail() {
   const { isOpen, selectedFlight, closeModal } = useFlightModal();
@@ -36,116 +40,44 @@ export function FlightDetail() {
       {isOpen && (
         <>
           {/* Header */}
-          <div
-            className={`flex flex-col gap-[10px] items-center p-[20px] w-full`}
-            style={{
-              backgroundImage: `linear-gradient(to top, ${flight?.colorGradient[0]}, ${flight?.colorGradient[1]})`,
-            }}
-          >
-            <div className="w-full px-[20px] py-[10px] bg-neutral-950 flex justify-between items-center rounded-xl">
-              {/* Aircraft info */}
-              <div className="flex flex-col gap-[8px]">
-                <div className="text-orange text-2xl">
-                  {flight?.airline.code}
-                </div>
-                <div className="text-xl">{flight?.airline.name}</div>
-              </div>
-              {/* Close button */}
-              <button
-                type="button"
-                className="w-[40px] h-[40px] text-center bg-neutral-700 rounded-[50%] cursor-pointer"
-                onClick={handleClose}
-              >
-                x
-              </button>
-            </div>
-            {/* Aircraft */}
-            <div className="w-[480px]">
-              <img src={flight?.airplane.image} alt={flight?.airplane.name} />
-            </div>
-          </div>
+          <DetailsHeader
+            airline={flight?.airline}
+            airplane={flight?.airplane}
+            color1={flight?.colorGradient[0]}
+            color2={flight?.colorGradient[1]}
+            handleClose={handleClose}
+          />
           {/* Main */}
-          <div className="w-full p-[20px]">
+          {/* <DetailsMain /> */}
+          <div className="w-full p-[20px] flex flex-col gap-[10px]">
             {/* Locations */}
-            <div className="w-full min-h-[400px] flex flex-col gap-[4px]">
-              {/* From and To */}
-              <div className="relative flex justify-between items-center">
-                {/* From */}
-                <div className="bg-neutral-800 w-[49.5%] min-h-40 rounded-tl-3xl flex flex-col items-center justify-center">
-                  <div className="text-4xl mb-[12px]">{flight?.from.code}</div>
-                  <div className="text-xl">{flight?.from.city}</div>
-                  <div className="text-l text-neutral-500">
-                    {flight?.from.timezone}
-                  </div>
-                </div>
-                {/* To */}
-                <div className="bg-neutral-800 w-[49.5%] min-h-40 rounded-tr-3xl flex flex-col items-center justify-center">
-                  <div className="text-4xl mb-[12px]">{flight?.to.code}</div>
-                  <div className="text-xl">{flight?.to.city}</div>
-                  <div className="text-l text-neutral-500">
-                    {flight?.to.timezone}
-                  </div>
-                </div>
-                {/* Plane icon */}
-                <div className="bg-neutral-950 pt-3.5 pb-3 px-2 rounded-[50%] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-                  <img src="/plane icon.svg" alt="plane icon" />
-                </div>
-              </div>
-              {/* Progress Bar */}
-              <div className="bg-neutral-800 px-[30px] min-h-[90px]">
-                <div className="w-full mt-[10px]">
-                  <div className="flex h-[20px] items-center relative">
-                    <div
-                      className="relative h-[3px] bg-gradient-to-r from-[#E44948] to-[#FBA316] rounded-l"
-                      style={{
-                        width: `${flightProgress}%`,
-                        // width: "60%",
-                      }}
-                    ></div>
-                    <div
-                      className="h-[3px] bg-[#2c2c2c] rounded-r"
-                      style={{
-                        width: `${flightProgress && 100 - flightProgress}%`,
-                        // width: "40%",
-                      }}
-                    ></div>
-
-                    {/* Plane */}
-                    <img
-                      className={`absolute w-[24px] h-[22.5px] top-[-1px] translate-x-[-100%]`}
-                      src={iconPlane}
-                      alt="plane icon"
-                      style={{
-                        left: `${(flightProgress && flightProgress + 1) || 1}%`,
-                        // left: "60%",
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Time From */}
-              <div className="flex justify-between items-center">
-                {/* Scheduled */}
-                <div className="bg-neutral-800 w-[49.5%] min-h-16"></div>
-                {/* Actual */}
-                <div className="bg-neutral-800 w-[49.5%] min-h-16"></div>
-              </div>
-
-              {/* Time To */}
-              <div className="flex justify-between items-center">
-                {/* Scheduled */}
-                <div className="bg-neutral-800 w-[49.5%] min-h-16 rounded-bl-3xl"></div>
-                {/* Estimated */}
-                <div className="bg-neutral-800 w-[49.5%] min-h-16 rounded-br-3xl"></div>
-              </div>
-            </div>
-
+            <DetailsRoute
+              flightProgress={flightProgress}
+              from={flight?.from}
+              to={flight?.to}
+              iconPlane={iconPlane}
+              infoFrom={{
+                distance: "2400",
+                time: "3h 30m",
+                scheduled: "08:35",
+                actual: "08:40",
+              }}
+              infoTo={{
+                distance: "500",
+                time: "30m",
+                scheduled: "12:35",
+                estimated: "12:40",
+              }}
+            />
             {/* Flight Info */}
-            <div></div>
+            <DeatailsFlightInfo
+              airplane={flight?.airplane.name}
+              country={flight?.from.country}
+              flightInfo={flight?.route}
+            />
 
             {/* Buttons */}
-            <div></div>
+            <DetailsButtons />
           </div>
         </>
       )}
