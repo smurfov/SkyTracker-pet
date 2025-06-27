@@ -1,9 +1,11 @@
 import iconPlane from "../../assets/plane icon.svg";
+import darkIconPlane from "../../assets/dark plane ico.svg";
 import type { IFlight } from "../../shared/types/flight.types";
 import { cn } from "../../utils/cn";
 import { useFlightModal } from "../../shared/hooks/useFlightModal";
 // import { useAnimateProgress } from "../../shared/hooks/useAnimateProgress";
 import { useEffect, useState } from "react";
+import { useTheme } from "../../shared/hooks/useTheme";
 
 interface Props {
   flight: IFlight;
@@ -13,6 +15,7 @@ export function FlightItem({ flight }: Props) {
   const [flightProgress, setFlightProgress] = useState<number>(flight.progress);
   const { selectedFlight, openModal } = useFlightModal();
   const isActive = selectedFlight === flight.airline.code;
+  const { theme } = useTheme();
   // const flightProgress = useAnimateProgress(flight.progress);
 
   useEffect(() => {
@@ -41,7 +44,7 @@ export function FlightItem({ flight }: Props) {
       )}
     >
       <button
-        className="flex flex-col gap-[20px] rounded-xl w-[480px] h-[200px] justify-between p-[20px] bg-[#1c1c1c] cursor-pointer"
+        className="flex flex-col gap-[20px] rounded-xl w-[480px] h-[200px] justify-between p-[20px] bg-[#fefefe] dark:bg-[#1c1c1c] cursor-pointer"
         onClick={() => {
           openModal(flight.airline.code);
           localStorage.setItem(
@@ -58,10 +61,12 @@ export function FlightItem({ flight }: Props) {
               src={flight.logo}
               alt={flight.airline.name}
             />
-            <div className="text-xl">{flight.airline.code}</div>
+            <div className="text-xl text-[#2c2c2c] dark:text-[#fefefe]">
+              {flight.airline.code}
+            </div>
           </div>
           <div className="flex items-center">
-            <div className="px-[8px] pb-[3px] pt-[5px] m-0 bg-[#2c2c2c] rounded-xl text-l">
+            <div className="px-[8px] pb-[3px] pt-[5px] m-0 bg-[#cecece] dark:bg-[#2c2c2c] text-[#2c2c2c] dark:text-[#fefefe] rounded-xl text-l">
               {flight.aircraftReg}
             </div>
           </div>
@@ -71,8 +76,10 @@ export function FlightItem({ flight }: Props) {
         <div className="flex justify-between items-center">
           {/* From */}
           <div className="flex flex-col w-[100px]">
-            <div className="text-l text-left">{flight.from.city}</div>
-            <div className="text-4xl uppercase text-left">
+            <div className="text-l text-left text-[#2c2c2c] dark:text-[#fefefe]">
+              {flight.from.city}
+            </div>
+            <div className="text-4xl uppercase text-left text-[#2c2c2c] dark:text-[#fefefe]">
               {flight.from.code}
             </div>
           </div>
@@ -87,7 +94,7 @@ export function FlightItem({ flight }: Props) {
                 }}
               ></div>
               <div
-                className="h-[4px] bg-[#2c2c2c] rounded-r"
+                className="h-[4px] dark:bg-[#2c2c2c] bg-[#cecece] rounded-r"
                 style={{
                   width: `${100 - flightProgress}%`,
                 }}
@@ -96,7 +103,7 @@ export function FlightItem({ flight }: Props) {
               {/* Plane */}
               <img
                 className={`absolute w-[24px] h-[22.5px] top-[-1px] translate-x-[-100%]`}
-                src={iconPlane}
+                src={theme === "dark" ? iconPlane : darkIconPlane}
                 alt="plane icon"
                 style={{
                   left: `${flightProgress + 1 || 1}%`,
@@ -107,8 +114,10 @@ export function FlightItem({ flight }: Props) {
 
           {/* To */}
           <div className="flex flex-col w-[100px]">
-            <div className="text-l text-right">{flight.to.city}</div>
-            <div className="text-4xl uppercase text-right">
+            <div className="text-l text-right text-[#2c2c2c] dark:text-[#fefefe]">
+              {flight.to.city}
+            </div>
+            <div className="text-4xl uppercase text-right text-[#2c2c2c] dark:text-[#fefefe]">
               {flight.to.code}
             </div>
           </div>

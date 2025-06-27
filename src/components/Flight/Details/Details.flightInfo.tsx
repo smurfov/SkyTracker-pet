@@ -23,26 +23,32 @@ export function DeatailsFlightInfo({
   return (
     <>
       <div className="flex flex-col gap-[4px]">
-        <div className="rounded-tl-3xl rounded-tr-3xl bg-neutral-700 py-[15px] pl-[16px]">
+        <div className="rounded-tl-3xl rounded-tr-3xl dark:bg-neutral-700 bg-neutral-400 py-[15px] pl-[16px] dark:text-[#fefefe] text-[#2c2c2c]">
           Flight Information
         </div>
         <div className="flex item-center justify-between">
-          <div className="w-[49.5%] bg-neutral-800 text-xl py-[20px] pl-[16px]">
+          <div className="w-[49.5%] dark:bg-neutral-800 bg-neutral-200 text-xl py-[20px] pl-[16px] dark:text-[#fefefe] text-[#2c2c2c]">
             {airplane}
           </div>
-          <div className="w-[49.5%] bg-neutral-800 text-xl py-[20px] pl-[16px]">
+          <div className="w-[49.5%] dark:bg-neutral-800 bg-neutral-200 text-xl py-[20px] pl-[16px]">
             <CountryFlag countryCode={isoCode} />
-            <span className="ml-2">{country}</span>
+            <span className="ml-2 dark:text-[#fefefe] text-[#2c2c2c]">
+              {country}
+            </span>
           </div>
         </div>
         <div className="flex item-center justify-between">
-          <div className="w-[49.5%] text-xl bg-neutral-800 flex item-center justify-between py-[20px] px-[16px] rounded-bl-3xl">
+          <div className="w-[49.5%] text-xl dark:bg-neutral-800 bg-neutral-200 flex item-center justify-between py-[20px] px-[16px] rounded-bl-3xl">
             <div className="text-neutral-600">Speed</div>
-            <div>{flightInfo?.speed} km/h</div>
+            <div className="dark:text-[#fefefe] text-[#2c2c2c]">
+              {flightInfo?.speed} km/h
+            </div>
           </div>
-          <div className="w-[49.5%] text-xl bg-neutral-800 flex item-center justify-between py-[20px] px-[16px] rounded-br-3xl">
+          <div className="w-[49.5%] text-xl dark:bg-neutral-800 bg-neutral-200 flex item-center justify-between py-[20px] px-[16px] rounded-br-3xl">
             <div className="text-neutral-600">Altitude</div>
-            <div>{flightInfo?.altitude} m</div>
+            <div className="dark:text-[#fefefe] text-[#2c2c2c]">
+              {flightInfo?.altitude} m
+            </div>
           </div>
         </div>
       </div>

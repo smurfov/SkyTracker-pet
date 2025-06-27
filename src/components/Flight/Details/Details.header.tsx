@@ -27,11 +27,13 @@ export function DetailsHeader({
         backgroundImage: `linear-gradient(to top, ${color1}, ${color2})`,
       }}
     >
-      <div className="w-full px-[20px] py-[10px] bg-neutral-950 flex justify-between items-center rounded-xl">
+      <div className="w-full px-[20px] py-[10px] dark:bg-neutral-950 bg-[#fefefe] flex justify-between items-center rounded-xl">
         {/* Aircraft info */}
         <div className="flex flex-col gap-[8px]">
           <div className="text-orange text-3xl">{airline?.code}</div>
-          <div className="text-2xl">{airline?.name}</div>
+          <div className="text-2xl text-[#2c2c2c] dark:text-[#fefefe]">
+            {airline?.name}
+          </div>
         </div>
         {/* Close button */}
         <button

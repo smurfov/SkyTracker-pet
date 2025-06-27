@@ -3,15 +3,18 @@ import { useFlightModal } from "../../shared/hooks/useFlightModal";
 import { cn } from "../../utils/cn";
 import { useEffect, useState } from "react";
 import iconPlane from "../../assets/plane icon.svg";
+import darkIconPlane from "../../assets/dark plane ico.svg";
 import { useAnimateProgress } from "../../shared/hooks/useAnimateProgress";
 import { DetailsHeader } from "./Details/Details.header";
 import { DetailsRoute } from "./Details/Details.route";
 import { DeatailsFlightInfo } from "./Details/Details.flightInfo";
 import { DetailsButtons } from "./Details/Details.buttons";
+import { useTheme } from "../../shared/hooks/useTheme";
 
 export function FlightDetail() {
   const { isOpen, selectedFlight, closeModal } = useFlightModal();
   const [isVisible, setIsVisible] = useState<boolean>(isOpen);
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (isOpen) {
@@ -31,7 +34,7 @@ export function FlightDetail() {
   return (
     <div
       className={cn(
-        "w-[520px] rounded-xl h-[97vh] bg-[#1c1c1c] fixed top-[20px] right-0 overflow-y-auto no-scrollbar transition-transform duration-1000 ease flex flex-col items-center gap-[12px]",
+        "w-[520px] rounded-xl h-[97vh] bg-[#fefefe] dark:bg-[#1c1c1c] fixed top-[20px] right-0 overflow-y-auto no-scrollbar transition-transform duration-1000 ease flex flex-col items-center gap-[12px]",
         selectedFlight && isVisible
           ? "translate-x-[-40px]"
           : "translate-x-[530px]"
@@ -56,7 +59,7 @@ export function FlightDetail() {
               flightProgress={flightProgress}
               from={flight?.from}
               to={flight?.to}
-              iconPlane={iconPlane}
+              iconPlane={theme === "dark" ? iconPlane : darkIconPlane}
               infoFrom={{
                 distance: "2400",
                 time: "3h 30m",
