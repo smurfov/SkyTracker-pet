@@ -6,6 +6,8 @@ export interface IFlightAirplane {
 export interface IFlightAirline {
   code: string;
   name: string;
+  country: string;
+  isoCode: string;
 }
 
 export interface IFlightRoute {

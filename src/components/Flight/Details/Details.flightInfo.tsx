@@ -1,15 +1,24 @@
 import type { IFlightRoute } from "../../../shared/types/flight.types";
+import "flag-icons/css/flag-icons.min.css";
+
+const CountryFlag = ({ countryCode }: { countryCode: string | undefined }) => {
+  return (
+    <span className={`fi fi-${countryCode && countryCode.toLowerCase()}`} />
+  );
+};
 
 interface DeatailsFlightInfoProps {
   flightInfo: IFlightRoute | undefined;
   airplane: string | undefined;
   country: string | undefined;
+  isoCode: string | undefined;
 }
 
 export function DeatailsFlightInfo({
   flightInfo,
   airplane,
   country,
+  isoCode,
 }: DeatailsFlightInfoProps) {
   return (
     <>
@@ -22,7 +31,8 @@ export function DeatailsFlightInfo({
             {airplane}
           </div>
           <div className="w-[49.5%] bg-neutral-800 text-xl py-[20px] pl-[16px]">
-            {country}
+            <CountryFlag countryCode={isoCode} />
+            <span className="ml-2">{country}</span>
           </div>
         </div>
         <div className="flex item-center justify-between">

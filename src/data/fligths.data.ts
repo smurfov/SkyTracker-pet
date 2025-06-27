@@ -3,7 +3,12 @@ import type { IFlight } from "../shared/types/flight.types";
 export const FLIGHTS: IFlight[] = [
   {
     logo: "/logos/turkish.svg",
-    airline: { code: "TK143", name: "Turkish Airlines" },
+    airline: {
+      code: "TK143",
+      name: "Turkish Airlines",
+      country: "Turkey",
+      isoCode: "TR",
+    },
     aircraftReg: "TC-JFP",
     from: {
       city: "Sofia",
@@ -32,7 +37,12 @@ export const FLIGHTS: IFlight[] = [
   },
   {
     logo: "/logos/ryanair.svg",
-    airline: { code: "RN1782", name: "Ryanair" },
+    airline: {
+      code: "RN1782",
+      name: "Ryanair",
+      country: "Ireland",
+      isoCode: "IE",
+    },
     aircraftReg: "D-AISP",
     from: {
       city: "Dublin",
@@ -61,7 +71,7 @@ export const FLIGHTS: IFlight[] = [
   },
   {
     logo: "/logos/s7.svg",
-    airline: { code: "S7124", name: "S7" },
+    airline: { code: "S7124", name: "S7", country: "Russia", isoCode: "RU" },
     aircraftReg: "RA-73415",
     from: {
       city: "Nice",
@@ -90,7 +100,12 @@ export const FLIGHTS: IFlight[] = [
   },
   {
     logo: "/logos/swiss.svg",
-    airline: { code: "LX318", name: "SWISS Airlines" },
+    airline: {
+      code: "LX318",
+      name: "SWISS Airlines",
+      country: "Switzerland",
+      isoCode: "CH",
+    },
     aircraftReg: "HB-JHK",
     from: {
       city: "Porto",
@@ -120,7 +135,12 @@ export const FLIGHTS: IFlight[] = [
   },
   {
     logo: "/logos/lufthansa.svg",
-    airline: { code: "LH401", name: "lufthansa" },
+    airline: {
+      code: "LH401",
+      name: "Lufthansa",
+      country: "Germany",
+      isoCode: "DE",
+    },
     aircraftReg: "D-AIXD",
     from: {
       city: "Burgas",

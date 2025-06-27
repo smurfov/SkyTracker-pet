@@ -73,8 +73,9 @@ export function FlightDetail() {
             {/* Flight Info */}
             <DeatailsFlightInfo
               airplane={flight?.airplane.name}
-              country={flight?.from.country}
+              country={flight?.airline.country}
               flightInfo={flight?.route}
+              isoCode={flight?.airline.isoCode}
             />
 
             {/* Buttons */}
