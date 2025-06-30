@@ -1,10 +1,15 @@
 export const ROUTES = {
   home: {
-    path: "",
+    path: "/",
     name: "Home",
   },
-  about: {
-    path: "about",
-    name: "About",
+  contacts: {
+    path: "/contacts",
+    name: "Contacts",
+  },
+
+  favorite: {
+    path: "/favorite",
+    name: "Favorite",
   },
 } as const;

@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import { ThemeToggle } from "../Theme/ThemeToggle";
+import { Header } from "../Header/Header";
 
 export function Layout() {
   return (
     <div>
+      <Header />
       <main>
-        <ThemeToggle />
         <Outlet />
       </main>
     </div>

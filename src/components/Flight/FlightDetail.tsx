@@ -34,7 +34,7 @@ export function FlightDetail() {
   return (
     <div
       className={cn(
-        "w-[520px] rounded-xl h-[97vh] bg-[#fefefe] dark:bg-[#1c1c1c] fixed top-[20px] right-0 overflow-y-auto no-scrollbar transition-transform duration-1000 ease flex flex-col items-center gap-[12px]",
+        "w-[520px] rounded-xl h-[93vh] bg-[#fefefe] dark:bg-[#1c1c1c] fixed top-13 right-0 overflow-y-auto no-scrollbar transition-transform duration-1000 ease flex flex-col items-center gap-[12px]",
         selectedFlight && isVisible
           ? "translate-x-[-40px]"
           : "translate-x-[530px]"
