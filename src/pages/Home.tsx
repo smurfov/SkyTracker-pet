@@ -1,9 +1,9 @@
-import { FlightDetail } from "../components/Flight/FlightDetail";
-import { FlightList } from "../components/Flight/FlightList";
+import { FlightDetail } from "../components/Flight/FlightDetail/FlightDetail";
+import { FlightList } from "../components/Flight/FlightList/FlightList";
 
 export function Home() {
   return (
-    <div className="w-screen h-screen">
+    <div>
       <FlightList />
       <FlightDetail />
     </div>

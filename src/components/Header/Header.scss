@@ -1,0 +1,75 @@
+@use "@/shared/styles/widthDevices.scss" as *;
+
+.header {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 50;
+  background-color: var(--color-bg);
+  &--dark {
+    background-color: var(--color-bg-dark);
+  }
+
+  &__nav {
+    // nav styles
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__logo {
+    font-weight: 900;
+    font-size: 1.25rem;
+    color: var(--color-text);
+    transition: transform 0.2s;
+    text-decoration: none;
+    &:hover {
+      transform: scale(1.1);
+    }
+    .header__logo-accent {
+      color: var(--color-accent2);
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-gray);
+    color: var(--color-accent2);
+    transition: all 0.3s;
+    outline: none;
+    text-decoration: none;
+    font-size: 1.25rem;
+
+    @media (max-width: $screen-xs) {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &--active {
+      background-color: var(--color-accent2);
+      color: var(--color-bg);
+    }
+  }
+}

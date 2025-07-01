@@ -1,0 +1,159 @@
+@use "@/shared/styles/widthDevices.scss" as *;
+
+.flight__item {
+  padding: 3px;
+  border-radius: 12px;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #e44948 0%, #fba316 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  &.active::before {
+    opacity: 1;
+  }
+}
+
+.flight__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 12px;
+  width: 480px;
+  height: 200px;
+  padding: 20px;
+  background-color: var(--color-bg);
+  border: none;
+  outline: none;
+  transition: background 0.3s ease-in;
+  cursor: pointer;
+
+  @media (max-width: $screen-sm) {
+    width: 360px;
+  }
+  @media (max-width: $screen-xs) {
+    width: 300px;
+  }
+  @media (max-width: $screen-xxs) {
+    width: 290px;
+  }
+}
+
+.flight__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flight__logo-block {
+  display: flex;
+  align-items: center;
+}
+
+.flight__logo {
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: center/cover #fff;
+}
+
+.flight__code {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.flight__reg-block {
+  display: flex;
+  align-items: center;
+}
+
+.flight__reg {
+  padding: 5px 8px 3px 8px;
+  margin: 0;
+  background-color: var(--color-gray);
+  color: var(--color-text);
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.flight__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flight__from,
+.flight__to {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+.flight__city {
+  font-size: 1rem;
+  color: var(--color-text);
+  text-align: left;
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.flight__iata {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-align: left;
+  &--right {
+    text-align: right;
+  }
+}
+
+.flight__progress-bar {
+  width: 70%;
+  margin-top: 10px;
+}
+
+.flight__progress-bg {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  position: relative;
+}
+
+.flight__progress {
+  position: relative;
+  height: 4px;
+  background: linear-gradient(90deg, #e44948 0%, #fba316 100%);
+  border-radius: 4px 0 0 4px;
+  transition: width 0.3s;
+}
+
+.flight__progress-rest {
+  height: 4px;
+  background: var(--color-gray);
+  border-radius: 0 4px 4px 0;
+  transition: width 0.3s;
+}
+
+.flight__plane {
+  position: absolute;
+  width: 24px;
+  height: 22.5px;
+  top: -1px;
+  transform: translateX(-100%);
+  transition: left 0.3s;
+}

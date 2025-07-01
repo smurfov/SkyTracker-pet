@@ -1,7 +1,7 @@
 import type {
   IFlightAirline,
   IFlightAirplane,
-} from "../../../shared/types/flight.types";
+} from "../../../../shared/types/flight.types";
 
 interface DetailsHeaderProps {
   airplane: IFlightAirplane | undefined;
@@ -22,23 +22,25 @@ export function DetailsHeader({
 }: DetailsHeaderProps) {
   return (
     <div
-      className={`flex flex-col gap-[10px] items-center p-[20px] w-full`}
+      className="flight-detail__header"
       style={{
         backgroundImage: `linear-gradient(to top, ${color1}, ${color2})`,
       }}
     >
-      <div className="w-full px-[20px] py-[10px] dark:bg-neutral-950 bg-[#fefefe] flex justify-between items-center rounded-xl">
+      <div className="flight-detail__header-inner">
         {/* Aircraft info */}
-        <div className="flex flex-col gap-[8px]">
-          <div className="text-orange text-3xl">{airline?.code}</div>
-          <div className="text-2xl text-[#2c2c2c] dark:text-[#fefefe]">
+        <div className="flight-detail__header-info">
+          <div className="flight-detail__header-airline-code">
+            {airline?.code}
+          </div>
+          <div className="flight-detail__header-airline-name">
             {airline?.name}
           </div>
         </div>
         {/* Close button */}
         <button
           type="button"
-          className="w-[40px] h-[40px] bg-neutral-700 rounded-[50%] cursor-pointer flex justify-center"
+          className="flight-detail__header-close-btn"
           onClick={handleClose}
         >
           <img
@@ -46,12 +48,12 @@ export function DetailsHeader({
             height={"25px"}
             src="/icons/Close.svg"
             alt="Close ico"
-            className={`${!move && "animate-spin"}`}
+            className={!move ? "animate-spin" : undefined}
           />
         </button>
       </div>
       {/* Aircraft */}
-      <div className="w-[480px]">
+      <div className="flight-detail__header-airplane-img">
         <img src={airplane?.image} alt={airplane?.name} />
       </div>
     </div>

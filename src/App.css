@@ -1,15 +1,9 @@
-@layer utilities {
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .bg-gradient-transition {
-    transition: background-position 0.4s ease, background-color 0.4s ease,
-      transform 0.3s ease;
-  }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -17,7 +11,7 @@ body {
   overflow: hidden;
   background-image: url("./assets/MapPlaceholder.png");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 
 #root {

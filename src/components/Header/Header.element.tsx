@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
-import { cn } from "../../utils/cn";
+import "./Header.scss";
 
-interface IHeaderElement {
+interface IHeaderNavLink {
   linkTo: string;
   icon: string;
   isActive: boolean;
 }
 
-export function HeaderElement({ linkTo, icon, isActive }: IHeaderElement) {
+export function HeaderNavLink({ linkTo, icon, isActive }: IHeaderNavLink) {
   return (
     <Link
       to={linkTo}
-      className={cn(
-        "flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-neutral-800 text-yellow-500 dark:text-yellow-300 focus:outline-none transition-all duration-300 hover:scale-105"
-      )}
+      className={`header__nav-link ${isActive && "header__nav-link--active"}`}
     >
       <i className={`fas ${icon}`}></i>
     </Link>

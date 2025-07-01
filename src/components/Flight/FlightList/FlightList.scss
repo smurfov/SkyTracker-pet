@@ -1,0 +1,22 @@
+@use "@/shared/styles/widthDevices.scss" as *;
+
+.flight__list {
+  position: fixed;
+  top: 52px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 92vh;
+  width: fit-content;
+  overflow-y: auto;
+
+  @media (max-width: $screen-xl) {
+    left: 15px;
+  }
+
+  @media (max-width: $screen-lg) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

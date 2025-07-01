@@ -2,7 +2,7 @@ import { Button } from "./Button/Button";
 
 export function DetailsButtons() {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flight-detail__buttons">
       <Button name="Route" first={true} />
       <Button name="Follow" />
       <Button name="Share" />

@@ -1,15 +1,15 @@
-import { FLIGHTS } from "../../data/fligths.data";
-import { useFlightModal } from "../../shared/hooks/useFlightModal";
-import { cn } from "../../utils/cn";
+import { FLIGHTS } from "@/data/fligths.data";
+import { useFlightModal } from "@/shared/hooks/useFlightModal";
 import { useEffect, useState } from "react";
-import iconPlane from "../../assets/plane icon.svg";
-import darkIconPlane from "../../assets/dark plane ico.svg";
-import { useAnimateProgress } from "../../shared/hooks/useAnimateProgress";
+import iconPlane from "@/assets/plane icon.svg";
+import darkIconPlane from "@/assets/dark plane ico.svg";
+import { useAnimateProgress } from "@/shared/hooks/useAnimateProgress";
 import { DetailsHeader } from "./Details/Details.header";
 import { DetailsRoute } from "./Details/Details.route";
 import { DeatailsFlightInfo } from "./Details/Details.flightInfo";
 import { DetailsButtons } from "./Details/Details.buttons";
-import { useTheme } from "../../shared/hooks/useTheme";
+import { useTheme } from "@/shared/hooks/useTheme";
+import "./FlightDetail.scss";
 
 export function FlightDetail() {
   const { isOpen, selectedFlight, closeModal } = useFlightModal();
@@ -33,12 +33,11 @@ export function FlightDetail() {
 
   return (
     <div
-      className={cn(
-        "w-[520px] rounded-xl h-[93vh] bg-[#fefefe] dark:bg-[#1c1c1c] fixed top-13 right-0 overflow-y-auto no-scrollbar transition-transform duration-1000 ease flex flex-col items-center gap-[12px]",
+      className={`flight-detail no-scrollbar ${
         selectedFlight && isVisible
-          ? "translate-x-[-40px]"
-          : "translate-x-[530px]"
-      )}
+          ? "flight-detail--visible"
+          : "flight-detail--hidden"
+      }`}
     >
       {isOpen && (
         <>
@@ -52,8 +51,7 @@ export function FlightDetail() {
             move={isVisible}
           />
           {/* Main */}
-          {/* <DetailsMain /> */}
-          <div className="w-full p-[20px] flex flex-col gap-[10px]">
+          <div className="flight-detail__main">
             {/* Locations */}
             <DetailsRoute
               flightProgress={flightProgress}
