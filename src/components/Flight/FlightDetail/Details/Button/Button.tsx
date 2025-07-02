@@ -13,7 +13,7 @@ export function Button({ name, first, last }: ButtonsProps) {
         first && "flight-detail__button--first"
       } ${last && "flight-detail__button--last"}`}
     >
-      <img src={`/icons/${name}.svg`} alt={`${name} ico`} />
+      <img src={`./icons/${name}.svg`} alt={`${name} ico`} />
       <span className="flight-detail__button-text">{name}</span>
     </button>
   );

@@ -4,6 +4,7 @@ import { ROUTES } from "@/routes";
 import { HeaderNavLink } from "./Header.element";
 import { headerNavData } from "@/data/header-nav.data";
 import "./Header.scss";
+import { Filters } from "../Filters/Filters";
 
 export function Header() {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ export function Header() {
         Sky<span className="header__logo-accent">Tracker</span>
       </Link>
       <div className="header__controls">
+        <Filters />
         <ThemeToggle />
       </div>
     </header>

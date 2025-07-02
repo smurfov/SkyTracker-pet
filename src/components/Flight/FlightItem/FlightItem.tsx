@@ -4,6 +4,7 @@ import type { IFlight } from "@/shared/types/flight.types";
 import { useFlightModal } from "@/shared/hooks/useFlightModal";
 import { useEffect, useState } from "react";
 import { useTheme } from "@/shared/hooks/useTheme";
+import { FavoriteButton } from "./FavoriteButton/FavoriteButton";
 import "./FlightItem.scss";
 
 interface Props {
@@ -32,6 +33,7 @@ export function FlightItem({ flight }: Props) {
 
   return (
     <div className={`flight__item ${isActive && "active"}`}>
+      <FavoriteButton flightId={flight.aircraftReg} />
       <button
         className="flight__btn"
         onClick={() => {

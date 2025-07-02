@@ -46,7 +46,7 @@ export function DetailsHeader({
           <img
             width={"25px"}
             height={"25px"}
-            src="/icons/Close.svg"
+            src="./icons/Close.svg"
             alt="Close ico"
             className={!move ? "animate-spin" : undefined}
           />

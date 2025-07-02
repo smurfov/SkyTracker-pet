@@ -2,7 +2,7 @@ import type { IFlight } from "../shared/types/flight.types";
 
 export const FLIGHTS: IFlight[] = [
   {
-    logo: "/logos/turkish.svg",
+    logo: "./logos/turkish.svg",
     airline: {
       code: "TK143",
       name: "Turkish Airlines",
@@ -25,7 +25,7 @@ export const FLIGHTS: IFlight[] = [
       code: "PEK",
     },
     airplane: {
-      image: "/planes/turkish.png",
+      image: "./planes/turkish.png",
       name: "Airbus A330",
     },
     colorGradient: ["#ffdede", "#ffbaba"],
@@ -36,7 +36,7 @@ export const FLIGHTS: IFlight[] = [
     progress: 70,
   },
   {
-    logo: "/logos/ryanair.svg",
+    logo: "./logos/ryanair.svg",
     airline: {
       code: "RN1782",
       name: "Ryanair",
@@ -59,7 +59,7 @@ export const FLIGHTS: IFlight[] = [
       code: "LCA",
     },
     airplane: {
-      image: "/planes/ryanair.png",
+      image: "./planes/ryanair.png",
       name: "Boeing 737-800",
     },
     colorGradient: ["#A1C6E1", "#88B5E0"],
@@ -70,7 +70,7 @@ export const FLIGHTS: IFlight[] = [
     progress: 30,
   },
   {
-    logo: "/logos/s7.svg",
+    logo: "./logos/s7.svg",
     airline: { code: "S7124", name: "S7", country: "Russia", isoCode: "RU" },
     aircraftReg: "RA-73415",
     from: {
@@ -88,7 +88,7 @@ export const FLIGHTS: IFlight[] = [
       code: "TBS",
     },
     airplane: {
-      image: "/planes/s7.png",
+      image: "./planes/s7.png",
       name: "Airbus A320neo",
     },
     colorGradient: ["#d6ffe5", "#96f2c1"],
@@ -99,7 +99,7 @@ export const FLIGHTS: IFlight[] = [
     progress: 46,
   },
   {
-    logo: "/logos/swiss.svg",
+    logo: "./logos/swiss.svg",
     airline: {
       code: "LX318",
       name: "SWISS Airlines",
@@ -122,7 +122,7 @@ export const FLIGHTS: IFlight[] = [
       code: "GYD",
     },
     airplane: {
-      image: "/planes/swiss.png",
+      image: "./planes/swiss.png",
       name: "Airbus A220-300",
     },
     colorGradient: ["#e6e6ff", "#a8b4ff"],
@@ -134,7 +134,7 @@ export const FLIGHTS: IFlight[] = [
     progress: 70,
   },
   {
-    logo: "/logos/lufthansa.svg",
+    logo: "./logos/lufthansa.svg",
     airline: {
       code: "LH401",
       name: "Lufthansa",
@@ -157,7 +157,7 @@ export const FLIGHTS: IFlight[] = [
       code: "MCT",
     },
     airplane: {
-      image: "/planes/lufthansa.png",
+      image: "./planes/lufthansa.png",
       name: "Airbus A350-900",
     },
     colorGradient: ["#e5f2ff", "#9dd2f9"],

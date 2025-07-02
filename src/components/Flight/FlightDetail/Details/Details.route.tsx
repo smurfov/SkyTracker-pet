@@ -43,7 +43,7 @@ export function DetailsRoute({
         </div>
         {/* Plane icon */}
         <div className="flight-detail__route-plane">
-          <img src="/plane icon.svg" alt="plane icon" />
+          <img src="./plane icon.svg" alt="plane icon" />
         </div>
       </div>
       {/* Info About Route */}

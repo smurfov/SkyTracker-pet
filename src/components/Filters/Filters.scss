@@ -1,0 +1,63 @@
+@use "@/shared/styles/widthDevices.scss" as *;
+
+.filters {
+  border-radius: 50%;
+  background: var(--color-gray);
+  color: var(--color-accent2);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  position: relative;
+
+  @media (max-width: $screen-xs) {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__input {
+    position: absolute;
+    z-index: 40;
+    bottom: -100%;
+    right: 0;
+    background: var(--color-bg);
+    border: 3px solid var(--color-gray);
+    font-family: "JetBrains Mono", monospace;
+    padding: 5px 10px;
+    border-radius: 24px;
+    opacity: 0;
+    transform: translateY(-200%);
+    transition: transform 0.5s ease-in, opacity 1s ease-in;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(10%);
+    }
+
+    @media (max-width: $screen-xs) {
+      padding: 3px 7px;
+
+      &.active {
+        transform: translateY(40%);
+      }
+    }
+  }
+}

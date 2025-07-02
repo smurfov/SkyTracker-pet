@@ -8,7 +8,7 @@ import { Favorite } from "./pages/Favorite";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/SkyTracker-pet/">
       <Routes>
         <Route path={ROUTES.home.path} element={<Layout />}>
           <Route index element={<Home />} />

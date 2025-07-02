@@ -10,16 +10,16 @@ export const headerNavData: IHeaderNav[] = [
   {
     path: ROUTES.home.path,
     name: ROUTES.home.name,
-    icon: "fa-home",
+    icon: "home",
   },
   {
     path: ROUTES.contacts.path,
     name: ROUTES.contacts.name,
-    icon: "fa-envelope",
+    icon: "phone",
   },
   {
     path: ROUTES.favorite.path,
     name: ROUTES.favorite.name,
-    icon: "fa-star",
+    icon: "star",
   },
 ] as const;
