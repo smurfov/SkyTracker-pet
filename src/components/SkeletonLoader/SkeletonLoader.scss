@@ -1,0 +1,17 @@
+@use "@/shared/styles/mixin.scss" as *;
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton-loader {
+  background-color: var(--color-bg);
+  height: 200px;
+  margin: 3px;
+  flex-shrink: 0;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border-radius: 12px;
+  @include flightItemWidth;
+}

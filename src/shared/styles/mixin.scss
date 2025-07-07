@@ -1,0 +1,15 @@
+@use "@/shared/styles/widthDevices.scss" as *;
+
+@mixin flightItemWidth {
+  width: 480px;
+
+  @media (max-width: $screen-sm) {
+    width: 360px;
+  }
+  @media (max-width: $screen-xs) {
+    width: 300px;
+  }
+  @media (max-width: $screen-xxs) {
+    width: 290px;
+  }
+}

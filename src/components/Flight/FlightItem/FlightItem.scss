@@ -1,4 +1,5 @@
 @use "@/shared/styles/widthDevices.scss" as *;
+@use "@/shared/styles/mixin.scss" as *;
 
 .flight__item {
   padding: 3px;
@@ -29,24 +30,25 @@
   justify-content: space-between;
   gap: 20px;
   border-radius: 12px;
-  width: 480px;
-  height: 200px;
   padding: 20px;
   background-color: var(--color-bg);
   border: none;
   outline: none;
   transition: background 0.3s ease-in;
   cursor: pointer;
+  height: 200px;
+  @include flightItemWidth;
+  // width: 480px;
 
-  @media (max-width: $screen-sm) {
-    width: 360px;
-  }
-  @media (max-width: $screen-xs) {
-    width: 300px;
-  }
-  @media (max-width: $screen-xxs) {
-    width: 290px;
-  }
+  // @media (max-width: $screen-sm) {
+  //   width: 360px;
+  // }
+  // @media (max-width: $screen-xs) {
+  //   width: 300px;
+  // }
+  // @media (max-width: $screen-xxs) {
+  //   width: 290px;
+  // }
 }
 
 .flight__top {
