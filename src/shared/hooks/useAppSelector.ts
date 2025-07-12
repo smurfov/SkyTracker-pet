@@ -1,4 +1,4 @@
-import type { TRootState } from "@/store";
-import { useSelector, type TypedUseSelectorHook } from "react-redux";
+import type { TRootState } from '@/store'
+import { useSelector, type TypedUseSelectorHook } from 'react-redux'
 
-export const useAppSelector: TypedUseSelectorHook<TRootState> = useSelector;
+export const useAppSelector: TypedUseSelectorHook<TRootState> = useSelector
