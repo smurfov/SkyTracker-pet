@@ -16,6 +16,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'BG',
 			timezone: 'UTC +3',
 			code: 'SOF',
+			coordinates: [42.6977, 23.3219]
 		},
 		to: {
 			city: 'Beijing',
@@ -23,6 +24,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'CN',
 			timezone: 'UTC +8',
 			code: 'PEK',
+			coordinates: [39.9042, 116.4074]
 		},
 		airplane: {
 			image: './planes/turkish.png',
@@ -50,6 +52,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'IE',
 			timezone: 'UTC +1',
 			code: 'DUB',
+			coordinates: [53.3498, -6.2603]
 		},
 		to: {
 			city: 'Larnaca',
@@ -57,6 +60,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'CY',
 			timezone: 'UTC +3',
 			code: 'LCA',
+			coordinates: [34.9167, 33.6233]
 		},
 		airplane: {
 			image: './planes/ryanair.png',
@@ -79,6 +83,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'FR',
 			timezone: 'UTC +2',
 			code: 'NCE',
+			coordinates: [43.7102, 7.2620]
 		},
 		to: {
 			city: 'Tbilisi',
@@ -86,6 +91,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'GE',
 			timezone: 'UTC +4',
 			code: 'TBS',
+			coordinates: [41.7151, 44.8271]
 		},
 		airplane: {
 			image: './planes/s7.png',
@@ -113,6 +119,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'PT',
 			timezone: 'UTC +1',
 			code: 'OPO',
+			coordinates: [41.1579, -8.6291]
 		},
 		to: {
 			city: 'Baku',
@@ -120,6 +127,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'AZ',
 			timezone: 'UTC +4',
 			code: 'GYD',
+			coordinates: [40.4093, 49.8671]
 		},
 		airplane: {
 			image: './planes/swiss.png',
@@ -148,6 +156,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'BG',
 			timezone: 'UTC +3',
 			code: 'BOJ',
+			coordinates: [42.5048, 27.4716]
 		},
 		to: {
 			city: 'Muscat',
@@ -155,6 +164,7 @@ export const FLIGHTS: IFlight[] = [
 			countryCode: 'OM',
 			timezone: 'UTC +4',
 			code: 'MCT',
+			coordinates: [23.5880, 58.3829]
 		},
 		airplane: {
 			image: './planes/lufthansa.png',

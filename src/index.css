@@ -1,38 +1,39 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  font-family: "JetBrains Mono", monospace;
-  line-height: 1.5;
-  font-weight: 400;
-  font-style: normal;
+	font-family: 'JetBrains Mono', monospace;
+	line-height: 1.5;
+	font-weight: 400;
+	font-style: normal;
 
-  color-scheme: light dark;
-  color: #fefefe;
-  background-color: #fefefe;
+	color-scheme: light dark;
 
-  font-synthesis: none;
-  font-optical-sizing: auto;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	font-optical-sizing: auto;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-  --color-bg: #fefefe;
-  --color-bg-dark: #1c1c1c;
-  --color-text: #2c2c2c;
-  --color-text-dark: #fefefe;
-  --color-accent: #e44948;
-  --color-accent2: #fba316;
-  --color-gray: #cecece;
-  --color-gray-dark: #2c2c2c;
+	--color-bg: #fefefe;
+	--color-bg-dark: #1c1c1c;
+	--color-text: #2c2c2c;
+	--color-text-dark: #fefefe;
+	--color-accent: #e44948;
+	--color-accent2: #fba316;
+	--color-gray: #cecece;
+	--color-gray-dark: #2c2c2c;
+
+	color: var(--color-text);
+	background-color: var(--color-bg-dark);
 }
 
 :root.dark {
-  --color-bg: #1c1c1c;
-  --color-bg-dark: #fefefe;
-  --color-text: #fefefe;
-  --color-text-dark: #2c2c2c;
-  --color-accent: #e44948;
-  --color-accent2: #fba316;
-  --color-gray: #2c2c2c;
-  --color-gray-dark: #cecece;
+	--color-bg: #1c1c1c;
+	--color-bg-dark: #fefefe;
+	--color-text: #fefefe;
+	--color-text-dark: #2c2c2c;
+	--color-accent: #e44948;
+	--color-accent2: #fba316;
+	--color-gray: #2c2c2c;
+	--color-gray-dark: #cecece;
 }
