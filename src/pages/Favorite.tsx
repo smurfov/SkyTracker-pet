@@ -1,5 +1,5 @@
 import { FlightItem } from '@/components/Flight/FlightItem/FlightItem'
-import { FLIGHTS } from '@/data/fligths.data'
+import { FLIGHTS } from '@/data/flights.data'
 import { useAppSelector } from '@/shared/hooks/useAppSelector'
 import { useMemo } from 'react'
 import './Favorite.scss'

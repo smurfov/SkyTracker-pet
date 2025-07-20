@@ -1,23 +1,50 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export function useAnimateProgress(progress: number | undefined) {
-	const [flightProgress, setFlightProgress] = useState(progress)
+const FLIGHT_DURATION = 100000
+
+export function useAnimateProgress(initialProgress: number | undefined) {
+	const [flightProgress, setFlightProgress] = useState(initialProgress || 0)
+	const animationFrameId = useRef<number>()
+	const startTime = useRef<number>()
 
 	useEffect(() => {
-		const intervalId = setInterval(() => {
-			setFlightProgress(progress => {
-				const newProgress = progress ? progress + 1 : 0
-				if (newProgress >= 100) {
-					clearInterval(intervalId)
-					return 100
-				} else {
-					return newProgress
-				}
-			})
-		}, 500)
+		if (initialProgress === undefined) {
+			if (animationFrameId.current) {
+				cancelAnimationFrame(animationFrameId.current)
+			}
+			setFlightProgress(0)
+			return
+		}
 
-		return () => clearInterval(intervalId)
-	}, [])
+		setFlightProgress(initialProgress)
+		startTime.current = undefined
+
+		const animate = (timestamp: number) => {
+			if (startTime.current === undefined) {
+				startTime.current =
+					timestamp - (initialProgress / 100) * FLIGHT_DURATION
+			}
+
+			const elapsedTime = timestamp - startTime.current
+			let newProgress = (elapsedTime / FLIGHT_DURATION) * 100
+
+			if (newProgress >= 100) {
+				newProgress = 0
+				startTime.current = timestamp
+			}
+
+			setFlightProgress(newProgress)
+			animationFrameId.current = requestAnimationFrame(animate)
+		}
+
+		animationFrameId.current = requestAnimationFrame(animate)
+
+		return () => {
+			if (animationFrameId.current) {
+				cancelAnimationFrame(animationFrameId.current)
+			}
+		}
+	}, [initialProgress])
 
 	return flightProgress
 }

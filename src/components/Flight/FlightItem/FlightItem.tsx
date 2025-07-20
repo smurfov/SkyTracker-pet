@@ -1,9 +1,9 @@
 import darkIconPlane from '@/assets/dark plane ico.svg'
 import iconPlane from '@/assets/plane icon.svg'
+import { useAnimateProgress } from '@/shared/hooks/useAnimateProgress'
 import { useFlightModal } from '@/shared/hooks/useFlightModal'
 import { useTheme } from '@/shared/hooks/useTheme'
 import type { IFlight } from '@/shared/types/flight.types'
-import { useEffect, useState } from 'react'
 import { FavoriteButton } from './FavoriteButton/FavoriteButton'
 import './FlightItem.scss'
 
@@ -12,24 +12,25 @@ interface Props {
 }
 
 export function FlightItem({ flight }: Props) {
-	const [flightProgress, setFlightProgress] = useState<number>(flight.progress)
+	// const [flightProgress, setFlightProgress] = useState<number>(flight.progress)
 	const { selectedFlight, openModal } = useFlightModal()
 	const isActive = selectedFlight === flight.airline.code
 	const { theme } = useTheme()
+	const flightProgress = useAnimateProgress(flight.progress)
 
-	useEffect(() => {
-		const intervalId = setInterval(() => {
-			setFlightProgress(progress => {
-				const newProgress = progress + 1
-				if (newProgress >= 100) {
-					return 0
-				} else {
-					return newProgress
-				}
-			})
-		}, 500)
-		return () => clearInterval(intervalId)
-	}, [])
+	// useEffect(() => {
+	// 	const intervalId = setInterval(() => {
+	// 		setFlightProgress(progress => {
+	// 			const newProgress = progress + 1
+	// 			if (newProgress >= 100) {
+	// 				return 0
+	// 			} else {
+	// 				return newProgress
+	// 			}
+	// 		})
+	// 	}, 500)
+	// 	return () => clearInterval(intervalId)
+	// }, [])
 
 	return (
 		<div className={`flight__item ${isActive && 'active'}`}>
@@ -38,10 +39,7 @@ export function FlightItem({ flight }: Props) {
 				className='flight__btn'
 				onClick={() => {
 					openModal(flight.airline.code)
-					localStorage.setItem(
-						'flightProgress',
-						JSON.stringify(flight.progress)
-					)
+					localStorage.setItem('flightProgress', JSON.stringify(flightProgress))
 				}}
 			>
 				{/* Top */}

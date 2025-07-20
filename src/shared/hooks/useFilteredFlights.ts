@@ -1,4 +1,4 @@
-import { FLIGHTS } from '@/data/fligths.data'
+import { FLIGHTS } from '@/data/flights.data'
 import { useDebounce } from '@/shared/hooks/useDebounce'
 import { useContext, useMemo } from 'react'
 import { FilterContext } from '../providers/filter/filter.context'
