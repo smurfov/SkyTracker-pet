@@ -4,8 +4,8 @@ const FLIGHT_DURATION = 100000
 
 export function useAnimateProgress(initialProgress: number | undefined) {
 	const [flightProgress, setFlightProgress] = useState(initialProgress || 0)
-	const animationFrameId = useRef<number>()
-	const startTime = useRef<number>()
+	const animationFrameId = useRef<number | undefined>(undefined)
+	const startTime = useRef<number | undefined>(undefined)
 
 	useEffect(() => {
 		if (initialProgress === undefined) {

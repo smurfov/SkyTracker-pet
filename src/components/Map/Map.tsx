@@ -163,9 +163,11 @@ export function MapComponent() {
 				<MapUpdater activeFlight={activeFlight} />
 				<TileLayer
 					url={tileUrl}
-					onError={() => {
-						setIsLoading(false)
-						setIsError(true)
+					eventHandlers={{
+						tileerror: () => {
+							setIsLoading(false)
+							setIsError(true)
+						},
 					}}
 				/>
 
