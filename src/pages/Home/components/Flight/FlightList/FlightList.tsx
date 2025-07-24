@@ -1,32 +1,26 @@
-import { FlightItem } from '../FlightItem/FlightItem'
-// import { FLIGHTS } from "@/data/fligths.data";
-import { SkeletonLoader } from '../../SkeletonLoader/SkeletonLoader'
+import aviationService from '@/services/external/aviation/aviation.service'
 import { useFilteredFlights } from '@/shared/hooks/useFilteredFlights'
-import { useEffect, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import { SkeletonLoader } from '../../SkeletonLoader/SkeletonLoader'
+import { FlightItem } from '../FlightItem/FlightItem'
 import './FlightList.scss'
 
 export function FlightList() {
-	const { filteredFlights } = useFilteredFlights()
-	const [isLoading, setIsLoading] = useState(true)
+	const { data, isPending } = useQuery({
+		queryKey: ['flights'],
+		queryFn: () => aviationService.fetchFlights({}),
+	})
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setIsLoading(false)
-		}, 1500)
-
-		return () => {
-			clearTimeout(timer)
-		}
-	}, [])
+	const { filteredFlights } = useFilteredFlights(data?.data || [])
 
 	return (
 		<div className='flight__list no-scrollbar'>
-			{isLoading ? (
-				<SkeletonLoader count={filteredFlights.length} />
+			{isPending ? (
+				<SkeletonLoader count={10} />
 			) : (
 				!!filteredFlights.length &&
-				filteredFlights.map((flight, index) => (
-					<FlightItem key={index} flight={flight} />
+				filteredFlights.map(flight => (
+					<FlightItem key={flight.flight.iata} flight={flight} />
 				))
 			)}
 		</div>

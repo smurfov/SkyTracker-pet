@@ -23,7 +23,7 @@ export function FavoriteButton({ flightId }: Props) {
 
 	return (
 		<button
-			className={`favotite-button ${isFavorite ? 'active' : ''}`}
+			className={`favorite-button ${isFavorite ? 'active' : ''}`}
 			onClick={() => {
 				handleToggleFavorite()
 			}}
