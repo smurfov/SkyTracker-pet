@@ -1,5 +1,5 @@
-import darkIconPlane from '@/assets/dark plane ico.svg'
-import iconPlane from '@/assets/plane icon.svg'
+import darkIconPlane from '/assets/dark plane ico.svg'
+import iconPlane from '/assets/plane icon.svg'
 import { useAnimateProgress } from '@/shared/hooks/useAnimateProgress'
 import { useFlightModal } from '@/shared/hooks/useFlightModal'
 import { useTheme } from '@/shared/hooks/useTheme'

@@ -1,10 +1,10 @@
-import { FlightItem } from '@/components/Flight/FlightItem/FlightItem'
+import { FlightItem } from './Home/components/Flight/FlightItem/FlightItem'
 import { FLIGHTS } from '@/data/flights.data'
 import { useAppSelector } from '@/shared/hooks/useAppSelector'
 import { useMemo } from 'react'
 import './Favorite.scss'
 
-export function Favorite() {
+export default function Favorite() {
 	const favorites = useAppSelector(state => state.favorites)
 
 	const flights = useMemo(() => {

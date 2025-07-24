@@ -1,8 +1,8 @@
-import { ThemeToggle } from '@/components/Theme/ThemeToggle'
+import { ThemeToggle } from '../Theme/ThemeToggle'
 import { headerNavData } from '@/data/header-nav.data'
 import { ROUTES } from '@/routes'
 import { Link, useLocation } from 'react-router-dom'
-import { Filters } from '../Filters/Filters'
+import { Filters } from '@/pages/Home/components/Filters/Filters'
 import { HeaderNavLink } from './Header.element'
 import './Header.scss'
 

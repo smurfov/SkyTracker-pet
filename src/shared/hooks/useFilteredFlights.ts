@@ -7,10 +7,12 @@ export function useFilteredFlights() {
 	const { filter, setFilter } = useContext(FilterContext)
 	const debouncedFilter = useDebounce(filter, 400)
 
+	const flightsArray = useMemo(() => Object.values(FLIGHTS), [])
+
 	const filteredFlights = useMemo(() => {
-		if (!debouncedFilter.trim()) return FLIGHTS
+		if (!debouncedFilter.trim()) return flightsArray
 		const searchLower = debouncedFilter.trim().toLowerCase()
-		return FLIGHTS.filter(flight => {
+		return flightsArray.filter(flight => {
 			const fromCity = flight.from.city.toLowerCase()
 			const fromCountry = flight.from.country.toLowerCase()
 			const toCity = flight.to.city.toLowerCase()
@@ -24,7 +26,7 @@ export function useFilteredFlights() {
 				airline.includes(searchLower)
 			)
 		})
-	}, [debouncedFilter])
+	}, [debouncedFilter, flightsArray])
 
 	return { debouncedFilter, setFilter, filteredFlights }
 }

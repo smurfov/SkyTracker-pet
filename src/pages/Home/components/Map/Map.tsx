@@ -1,6 +1,3 @@
-import darkPlaneIcon from '@/assets/dark plane ico.svg'
-import MapPlaceholder from '@/assets/MapPlaceholder.png'
-import lightPlaneIcon from '@/assets/plane icon.svg'
 import { FLIGHTS } from '@/data/flights.data'
 import { useAnimateProgress } from '@/shared/hooks/useAnimateProgress'
 import { useFlightModal } from '@/shared/hooks/useFlightModal'
@@ -17,6 +14,9 @@ import {
 	useMap,
 } from 'react-leaflet'
 import { SkeletonLoader } from '../SkeletonLoader/SkeletonLoader'
+import darkPlaneIcon from '/assets/dark plane ico.svg'
+import MapPlaceholder from '/assets/MapPlaceholder.png'
+import lightPlaneIcon from '/assets/plane icon.svg'
 
 // Updates the map view when a flight is selected
 const MapUpdater = ({

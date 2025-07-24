@@ -1,9 +1,9 @@
-import { MapComponent } from '@/components/Map/Map'
-import { FlightDetail } from '../components/Flight/FlightDetail/FlightDetail'
-import { FlightList } from '../components/Flight/FlightList/FlightList'
 import './Home.scss'
+import { FlightDetail } from './Home/components/Flight/FlightDetail/FlightDetail'
+import { FlightList } from './Home/components/Flight/FlightList/FlightList'
+import { MapComponent } from './Home/components/Map/Map'
 
-export function Home() {
+export default function Home() {
 	return (
 		<div className='home'>
 			<div className='home__map'>

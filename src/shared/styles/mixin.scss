@@ -13,3 +13,17 @@
 		width: 290px;
 	}
 }
+
+@mixin flightDetailWidth {
+	width: 520px;
+
+	@media (max-width: $screen-sm) {
+		width: 460px;
+	}
+	@media (max-width: $screen-xs) {
+		width: 380px;
+	}
+	@media (max-width: $screen-xxs) {
+		width: 300px;
+	}
+}
